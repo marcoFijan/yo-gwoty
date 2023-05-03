@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link";
 
 export const MorePointsSidebar = () => {
   return (
@@ -16,18 +17,18 @@ export const MorePointsSidebar = () => {
         </p>
       </ul>
       <div className="grid gap-2 self-end pb-4">
-        <a
+        <Link
           className="font-bold text-white text-center rounded p-2 transform hover:-translate-y-1 duration-300 hover:shadow-lg bg-black"
           href="/"
         >
           Voer opdrachten uit
-        </a>
-        <a
+        </Link>
+        <Link
           className="font-bold text-black text-center rounded p-2 bg-youngones-green transform hover:-translate-y-1 duration-300 hover:shadow-lg"
           href="https://dashboard.youngones.works/inloggen"
         >
           Ga naar YoungOnes
-        </a>
+        </Link>
       </div>
     </section>
   )

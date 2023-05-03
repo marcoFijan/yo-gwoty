@@ -1,5 +1,7 @@
 import { Meta } from "../layout/Meta"
 import { Main } from "../templates/Main"
+import Image from "next/image";
+import Link from "next/link";
 import { GeneralInfoSidebar } from "../components/GeneralInfoSidebar"
 import { LeaderboardSidebar } from "../components/LeaderboardSidebar"
 import { InviteFreelancerPopUp } from "../components/InviteFreelancerPopUp"
@@ -19,15 +21,15 @@ let signedInUserID
 //   return data.result
 // }
 
-async function fetchLeaderboard() {
-  const { data } = await axios.get("https://gwoty.azurewebsites.net/api/points/getleaderboard")
-  return data
-}
+// async function fetchLeaderboard() {
+//   const { data } = await axios.get("https://gwoty.azurewebsites.net/api/points/getleaderboard")
+//   return data
+// }
 
-async function fetchJobCounts() {
-  const { data } = await axios.get(`https://gwoty.azurewebsites.net/api/user/userJobsScore?userId=${signedInUserID}`)
-  return data
-}
+// async function fetchJobCounts() {
+//   const { data } = await axios.get(`https://gwoty.azurewebsites.net/api/user/userJobsScore?userId=${signedInUserID}`)
+//   return data
+// }
 
 const Index = () => {
   // const ISSERVER = typeof window === "undefined"
@@ -102,37 +104,43 @@ const Index = () => {
           {/* BLACK NAVIGATION BUTTONS  */}
           <section className="hidden w-full grid-cols-3 gap-4 lg:grid">
             {/* BLACK BUTTON 1: PROFILE  */}
-            <a
+            <Link
               href="/profile"
               className="relative flex items-center p-4 text-white duration-300 transform bg-black rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1"
             >
-              <img
+              <Image
                 src="icons/profile.svg"
                 alt="profile-Logo"
+                width="500"
+                height="500"
                 className="box-border absolute w-1/4 justify-self-center h-3/5"
               />
               <p className="pl-24 text-lg font-bold">Profiel</p>
-            </a>
+            </Link>
             {/* BLACK BUTTON 2: LEADERBOARD  */}
-            <a
+            <Link
               href="/leaderboard"
               className="relative flex items-center p-4 text-white duration-300 bg-black rounded-lg shadow-md hover:shadow-xl ransform hover:-translate-y-1"
             >
-              <img
+              <Image
                 src="icons/leaderboard.svg"
                 alt="leaderboard-Logo"
+                width="500"
+                height="500"
                 className="box-border absolute w-1/4 justify-self-center h-3/5"
               />
               <p className="pl-24 text-lg font-bold">Tussenstand</p>
-            </a>
+            </Link>
             {/* BLACK BUTTON 3: ABOUT  */}
             <a
               href="https://youngones.com/nl/gwoty-spelregels/"
               className="relative flex items-center p-4 text-white duration-300 transform bg-black rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1"
             >
-              <img
+              <Image
                 src="icons/medal.svg"
                 alt="about-GWOTY-Logo"
+                width="500"
+                height="500"
                 className="box-border absolute w-1/4 justify-self-center h-3/5"
               />
               <p className="pl-24 text-lg font-bold">Over GWOTY</p>

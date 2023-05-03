@@ -1,6 +1,8 @@
 import { AppConfig } from "../utils/AppConfig"
 import { useRouter } from "next/router"
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   weight: ["400", "700", "900"],
@@ -41,36 +43,36 @@ const Main = ({ meta, userName, profilePicture, children }) => {
                 className="flex flex-col justify-end w-full h-full text-4xl text-center list-none md-w-auto mdlg:text-left mdlg:text-base mdlg:p-0 mdlg:h-auto mdlg:flex-row mdlg:justify-between"
               >
                 <li className="mb-0 mdlg:mr-2 mdlg:h-5 mdlg:pb-3.5 mdlg:border-b-8 border-transparent mdlg:hover:border-youngones-green">
-                  <a
+                  <Link
                     className="block w-full py-10 font-black mdlg:font-bold mdlg:bg-transparent mdlg:hover:bg-transparent mdlg:p-0 mdlg:w-auto bg-youngones-green hover:bg-black px-14"
                     href="/"
                   >
                     Dashboard
-                  </a>
+                  </Link>
                 </li>
                 <li className="mdlg:h-5 mdlg:mx-2 mdlg:pb-3.5 mdlg:border-b-8 border-transparent hover:border-youngones-green">
-                  <a
+                  <Link
                     className="block w-full py-10 font-black mdlg:font-bold mdlg:bg-transparent mdlg:hover:bg-transparent mdlg:p-0 mdlg:w-auto bg-youngones-green hover:bg-black px-14"
                     href="/profile"
                   >
                     Profiel
-                  </a>
+                  </Link>
                 </li>
                 <li className="mdlg:h-5 mdlg:mx-2 mdlg:pb-3.5 mdlg:border-b-8 border-transparent hover:border-youngones-green">
-                  <a
+                  <Link
                     className="block w-full py-10 font-black mdlg:font-bold mdlg:bg-transparent mdlg:hover:bg-transparent mdlg:p-0 mdlg:w-auto bg-youngones-green hover:bg-black px-14"
                     href="/leaderboard"
                   >
                     Tussenstand
-                  </a>
+                  </Link>
                 </li>
                 <li className="mdlg:h-5 mdlg:mx-2 mdlg:pb-3.5 mdlg:border-b-8 border-transparent hover:border-youngones-green whitespace-nowrap">
-                  <a
+                  <Link
                     className="block w-full py-10 font-black mdlg:font-bold mdlg:bg-transparent mdlg:hover:bg-transparent mdlg:p-0 mdlg:w-auto bg-youngones-green hover:bg-black px-14"
                     href="https://youngones.com/nl/gwoty-spelregels/"
                   >
                     GWOTY
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="mdlg:h-5 mdlg:pb-3.5 mdlg:border-b-8 border-transparent hover:border-youngones-green">
@@ -78,17 +80,21 @@ const Main = ({ meta, userName, profilePicture, children }) => {
                 </li>
               </ul>
             </nav>
-            <a className="block justify-self-start mdlg:justify-self-center" href="/">
-              <img
+            <Link className="block justify-self-start mdlg:justify-self-center" href="/">
+              <Image
                 src="/img/logo.png"
+                width="500"
+                height="500"
                 alt="GWOTY-Logo"
                 className="block w-24 py-1 ml-4 justify-self-start mdlg:ml-0 mdlg:justify-self-center mdlg:w-16"
               />
-            </a>
+            </Link>
             <div className="block mdlg:hidden"></div>
             <div className="flex items-center mr-4 justify-self-end">
-              <img
+              <Image
                 className="object-cover w-8 h-8 my-2 mr-4 rounded-full"
+                width="500"
+                height="500"
                 src={profilePicture}
                 alt="profiel afbeelding"
               />
@@ -109,18 +115,21 @@ const Main = ({ meta, userName, profilePicture, children }) => {
             © Copyright {new Date().getFullYear()} {AppConfig.title}
           </p>
           <p className="inline">Bij het meedoen met de GWOTY-awards ga je akkoord met de </p>
-          <a
+          <Link
             href="https://youngones.com/nl/gwoty-algemene-voorwaarden/"
             className="inline font-bold text-youngones-green hover:underline"
           >
             algemene voorwaarden
-          </a>
+          </Link>
         </footer>
       </div>
       {/* BACKGROUND  */}
       <div className="fixed bottom-0 right-0 z-0 w-full h-full bg-bg-grey"></div>
       {/* BANNER  */}
-      <img
+      <Image
+        width="0"
+        height="0"
+        alt='Background banner image'
         className="absolute z-0 object-cover w-full top-20 md:top-11 h-96 md:h-auto filter blur-xs"
         id="mainBanner"
         src="/img/bannerBlur.png"

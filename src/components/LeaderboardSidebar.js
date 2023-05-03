@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link";
 
 export const LeaderboardSidebar = () => {
   return (
@@ -26,9 +27,9 @@ export const LeaderboardSidebar = () => {
           <p className="font-bold">24 punten</p>
         </li>
         <li className="pb-4 mb-4 text-center">
-          <a className="text-youngones-green font-bold hover:underline md:text-sm" href="/leaderboard">
+          <Link className="text-youngones-green font-bold hover:underline md:text-sm" href="/leaderboard">
             Bekijk volledig leaderboard
-          </a>
+          </Link>
         </li>
       </ol>
     </section>

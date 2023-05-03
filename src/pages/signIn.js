@@ -2,19 +2,19 @@ import React from "react"
 import { SignInForm } from "../components/SignInForm"
 import { Meta } from "../layout/Meta"
 import { Other } from "../templates/Other"
-import { useRouter } from "next/router"
+import Image from "next/image";
 
 const signIn = () => {
   const ISSERVER = typeof window === "undefined"
 
-  if (!ISSERVER) {
-    if (localStorage.getItem("token") != null) {
-      const router = useRouter()
-      router.push({
-        pathname: "/",
-      })
-    }
-  }
+  // if (!ISSERVER) {
+  //   if (localStorage.getItem("token") != null) {
+  //     const router = useRouter()
+  //     router.push({
+  //       pathname: "/",
+  //     })
+  //   }
+  // }
   return (
     <Other meta={<Meta title="Inloggen" description="Inloggen bij GWOTY-Award" />}>
       <main className="flex w-full h-screen overflow-y-hidden md:justify-between">
@@ -58,8 +58,8 @@ const signIn = () => {
           {/* <div className="box-content fixed z-10 hidden transform rounded-full md:absolute h-96 w-96 p-44 bg-bg-grey left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4"></div> */}
         </section>
         <div className="relative z-0 flex-grow-0 hidden object-cover w-2/4 max-h-screen lg:w-3/5 2xl:w-4/6 md:block">
-          <img className="object-cover w-full h-full" src="/img/introBanner.jpg" alt="intro afbeelding" />
-          <img className="absolute h-32 bottom-5 right-5" src="/img/logoWhite.png" alt="GWOTY logo" />
+          <Image className="object-cover w-full h-full" src="/img/introBanner.jpg" alt="intro afbeelding" width="500" height="500"/>
+          <Image className="absolute h-32 bottom-5 right-5" src="/img/logoWhite.png" alt="GWOTY logo" width="500" height="500"/>
         </div>
       </main>
     </Other>

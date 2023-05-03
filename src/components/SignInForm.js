@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import axios from "axios"
 import { useRouter } from "next/dist/client/router"
 
 export const SignInForm = () => {
@@ -19,27 +18,27 @@ export const SignInForm = () => {
     //   .then((response) => response.text())
     //   .then((data) => console.log(data))
 
-    axios
-      .post("https://gwoty.azurewebsites.net/api/user/login", {
-        username: email,
-        password: password,
-      })
-      .then((data) => {
-        // sessionStorage.setItem("token", data.data)
-        // cookieCutter.set("token", data.data)
-        localStorage.setItem("token", data.data)
-      })
-      .catch(() => {
-        // HANDLE 400
-        // router.push("/signIn")
-        setIncorrectLogin(true)
-      })
-      .finally(() => {
-        if (localStorage.getItem("token") != null) {
-          setIncorrectLogin(false)
-          router.push("/")
-        }
-      })
+    // axios
+    //   .post("https://gwoty.azurewebsites.net/api/user/login", {
+    //     username: email,
+    //     password: password,
+    //   })
+    //   .then((data) => {
+    //     // sessionStorage.setItem("token", data.data)
+    //     // cookieCutter.set("token", data.data)
+    //     localStorage.setItem("token", data.data)
+    //   })
+    //   .catch(() => {
+    //     // HANDLE 400
+    //     // router.push("/signIn")
+    //     setIncorrectLogin(true)
+    //   })
+    //   .finally(() => {
+    //     if (localStorage.getItem("token") != null) {
+    //       setIncorrectLogin(false)
+    //       router.push("/")
+    //     }
+    //   })
   }
 
   // Return the array with the HTML and time

@@ -1,5 +1,7 @@
 import { Meta } from "../layout/Meta"
 import { Main } from "../templates/Main"
+import Image from "next/image";
+import Link from "next/link";
 import { GeneralInfoSidebar } from "../components/GeneralInfoSidebar"
 import { LeaderboardSidebar } from "../components/LeaderboardSidebar"
 import { GoBack } from "../components/ReturnButton"
@@ -74,8 +76,6 @@ const About = () => {
   return (
     <Main
       meta={<Meta title="Profile" description="Profiel overzicht" />}
-      // userName={userData?.firstName}
-      // profilePicture={!userDataIsLoading && userData?.image ? userData?.image : "/img/avatar.svg"}
       userName="Marco"
       profilePicture="/img/marco.jpg"
     >
@@ -89,9 +89,10 @@ const About = () => {
             </div>
             {/* UPPER SECTION OF PROFILEPAGE  */}
             <section className="md:flex">
-              <img
+              <Image
                 className="object-cover w-56 h-56 mx-auto md:w-48 md:h-48 2xl:w-64 2xl:h-64 shadow-imageShadow"
-                // src={!userDataIsLoading && userData?.image ? userData?.image : "/img/avatar.svg"}
+                width="900"
+                height="900"
                 src="/img/marco.jpg"
                 alt="profiel afbeelding"
               />
@@ -331,18 +332,18 @@ const About = () => {
                   Meer punten verdienen? Voer klussen uit via YoungOnes of voer de opdrachten uit op de hoofdpagina.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <a
+                  <Link
                     className="p-2 font-bold text-center text-white duration-300 transform bg-black rounded hover:-translate-y-1"
                     href="/"
                   >
                     Voer opdrachten uit
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="p-2 font-bold text-center text-black duration-300 transform rounded bg-youngones-green hover:-translate-y-1"
                     href="https://youngones.app.link/open"
                   >
                     Ga naar de app
-                  </a>
+                  </Link>
                 </div>
               </section>
             </section>
