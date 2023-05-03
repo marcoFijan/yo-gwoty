@@ -127,8 +127,8 @@ const Main = ({ meta, userName, profilePicture, children }) => {
       <div className="fixed bottom-0 right-0 z-0 w-full h-full bg-bg-grey"></div>
       {/* BANNER  */}
       <Image
-        width="0"
-        height="0"
+        width="2000"
+        height="2000"
         alt='Background banner image'
         className="absolute z-0 object-cover w-full top-20 md:top-11 h-96 md:h-auto filter blur-xs"
         id="mainBanner"
